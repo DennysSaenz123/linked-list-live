@@ -1,16 +1,22 @@
 public class Practice {
     public static void main(String[] args) {
-        Node myNode = new Node();
-        myNode.value = 'w';
+        Node myNode = new Node('w', null);
+        Node otherNode = new Node('x', null);
+        Node coolNode = new Node('e', null);
 
-        Node otherNode = new Node();
-        otherNode.value = 'e';
+        Node currentNode = myNode;
 
-        Node coolNode = otherNode;
-        coolNode.value = 'x';
+        myNode.next = otherNode;
+        otherNode.next = coolNode;
 
-        System.out.println(myNode.value);
-        System.out.println(otherNode.value);
-        System.out.println(coolNode.value);
+        while(currentNode != null) {
+            System.out.println(currentNode.value);
+            currentNode = currentNode.next;
+        }
+
+
+        // System.out.println(myNode.value);
+        // System.out.println(myNode.next.value);
+        // System.out.println(myNode.next.next.value);
     }
 }
